@@ -2,31 +2,26 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>LOS KORKYS - HACKER TERMINAL</title>
+    <title>Feliz Cumpleaños ANA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="terminal">
-        <div id="header">
-            <h1 class="korkys-title">LOS KORKYS</h1>
-            <p>> SYSTEM // ACCESS GRANTED</p>
+    <div id="card">
+        <div id="image-container">
+            <div id="placeholder-initials">ANA</div>
+            <img id="profile-img" src="imagen.jpg" alt="Foto de ANA">
         </div>
-        <div id="scoreBoard">Puntuación: <span id="score">0</span></div>
-        <div id="playerInput">Nick: <input type="text" id="nick" placeholder="Tu nick" maxlength="12"></div>
-        <div id="game-area">
-            <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <h1>Feliz Cumpleaños</h1>
+        <h2 id="name">ANA</h2>
+        <div id="message">
+            <p>Hoy es un día especial para celebrar tu vida, tu sonrisa y todo lo que eres.</p>
+            <p>Que todos tus sueños se hagan realidad. ¡Disfruta tu día al máximo!</p>
         </div>
-        <div id="ranking">
-            <h3>>>> TOP 3 HACKERS:</h3>
-            <ol id="top3List"></ol>
-        </div>
-        <div id="instructions">
-            <p>>> INSTRUCCIONES: Usa las flechas (↑ ↓ ← →) para controlar.</p>
-        </div>
-        <div id="console">
-            <p>> SYSTEM INITIALIZED...</p>
-            <p>> SNAKE ENGINE LOADED...</p>
-        </div>
+        <div id="footer">Con mucho cariño</div>
+        <canvas id="confetti-canvas"></canvas>
     </div>
     <script src="script.js"></script>
 </body>
