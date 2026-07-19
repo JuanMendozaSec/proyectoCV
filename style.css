@@ -1,79 +1,123 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-    background-color: #050505;
-    color: #0f0;
-    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    background: linear-gradient(135deg, #1a0020, #2d0040, #1a0020);
+    font-family: 'Quicksand', 'Segoe UI', Tahoma, sans-serif;
+    overflow: hidden;
 }
-#terminal {
-    border: 2px solid #0f0;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
-    padding: 20px;
-    width: 450px;
+
+#card {
+    background: linear-gradient(145deg, #fff5f9, #ffe0ec);
+    border-radius: 40px;
+    padding: 50px 60px;
     text-align: center;
-    background-color: #000;
+    box-shadow: 0 25px 80px rgba(255, 105, 180, 0.4), 0 0 120px rgba(255, 182, 193, 0.2);
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    width: 95%;
 }
-.korkys-title {
-    color: #ff00ff; /* Resaltado magenta */
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-    font-size: 2rem;
-    margin-bottom: 10px;
+
+#image-container {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 6px solid #ff69b4;
+    box-shadow: 0 0 40px rgba(255, 105, 180, 0.5);
+    overflow: hidden;
+    margin: 0 auto 30px;
+    background: #ffe4ec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
-#scoreBoard {
-    color: #ffaa00;
+
+#placeholder-initials {
+    font-size: 6rem;
     font-weight: bold;
-    margin: 10px 0;
+    color: #ff69b4;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    font-family: 'Great Vibes', cursive;
 }
-#playerInput {
-    color: #0f0;
-    margin: 5px 0;
-}
-#playerInput input {
-    background: #000;
-    border: 1px solid #0f0;
-    color: #0f0;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 4px 8px;
-    outline: none;
-    width: 150px;
-}
-#ranking {
-    text-align: left;
-    margin-top: 15px;
-    padding: 10px;
-    border: 1px dashed #00ffff;
-    background: rgba(0, 255, 255, 0.05);
-}
-#ranking h3 {
-    margin: 0 0 5px 0;
-    font-size: 0.9rem;
-    color: #00ffff;
-}
-#top3List {
-    margin: 0;
-    padding-left: 20px;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-}
-canvas {
-    border: 1px solid #333;
-    background-color: #000;
+
+#profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    margin: 10px auto;
+    position: relative;
+    z-index: 2;
 }
-#instructions {
-    color: #888;
-    font-size: 0.85rem;
-    margin-top: 10px;
-    padding-top: 5px;
-    border-top: 1px dashed #333;
+
+#profile-img[src=""],
+#profile-img:not([src]) {
+    display: none;
 }
-#console {
-    text-align: left;
-    font-size: 0.8rem;
-    margin-top: 15px;
-    color: #00ffff; /* Cian para la consola */
+
+h1 {
+    font-size: 1.5rem;
+    color: #8b008b;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#name {
+    font-size: 5rem;
+    background: linear-gradient(45deg, #ff1493, #ff69b4, #ff1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 5px 0 20px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+}
+
+#message {
+    margin: 25px 0;
+}
+
+#message p {
+    font-size: 1.3rem;
+    color: #4a004a;
+    line-height: 1.8;
+    margin: 10px 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+#footer {
+    margin-top: 30px;
+    font-size: 1.4rem;
+    color: #c71585;
+    border-top: 3px dashed #ffb6c1;
+    padding-top: 18px;
+    font-family: 'Great Vibes', cursive;
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (max-width: 600px) {
+    #card { padding: 30px 25px; border-radius: 25px; }
+    #image-container { width: 180px; height: 180px; border-width: 4px; }
+    #placeholder-initials { font-size: 4rem; }
+    #name { font-size: 3rem; }
+    h1 { font-size: 1.1rem; letter-spacing: 2px; }
+    #message p { font-size: 1rem; }
+    #footer { font-size: 1.1rem; }
 }
