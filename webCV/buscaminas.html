@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMS_MINESWEEPER</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #game-container { text-align: center; margin-top: 20px; }
+        #game-header {
+            border: 1px solid var(--txt);
+            padding: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+        #game-header span { color: var(--cyan); }
+        #board {
+            display: inline-grid;
+            gap: 2px;
+            border: 2px solid var(--txt);
+            padding: 5px;
+            background: rgba(0,0,0,0.8);
+            box-shadow: 0 0 20px rgba(0,255,65,0.2);
+        }
+        .cell {
+            width: 30px; height: 30px;
+            border: 1px solid var(--txt-dim);
+            background: rgba(0,255,65,0.05);
+            color: var(--txt);
+            font-family: var(--fnt);
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.1s;
+            user-select: none;
+        }
+        .cell:hover { background: rgba(0,255,65,0.15); }
+        .cell.revealed {
+            background: rgba(0,0,0,0.6);
+            border-color: var(--txt-dim);
+            cursor: default;
+        }
+        .cell.mine {
+            background: rgba(255,51,51,0.3);
+            color: var(--red);
+            font-size: 16px;
+        }
+        .cell.flagged {
+            color: var(--yellow);
+            font-size: 14px;
+        }
+        .cell.n1 { color: #00ffff; }
+        .cell.n2 { color: #00ff41; }
+        .cell.n3 { color: #ff3333; }
+        .cell.n4 { color: #ff00ff; }
+        .cell.n5 { color: #ffff00; }
+        .cell.n6 { color: #00aaff; }
+        .cell.n7 { color: #ff6600; }
+        .cell.n8 { color: #ff0066; }
+        #difficulty {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        #difficulty button {
+            background: none;
+            border: 1px solid var(--txt-dim);
+            color: var(--txt);
+            padding: 6px 15px;
+            font-family: var(--fnt);
+            font-size: 11px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        #difficulty button:hover, #difficulty button.active {
+            background: var(--txt);
+            color: var(--bg);
+        }
+        #message {
+            margin-top: 15px;
+            font-size: 14px;
+            min-height: 20px;
+        }
+        #terminal-output {
+            text-align: left;
+            border: 1px solid var(--txt-dim);
+            padding: 10px;
+            margin-top: 15px;
+            font-size: 11px;
+            height: 80px;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.5);
+        }
+        #terminal-output p { margin: 2px 0; padding-left: 0; }
+        .log-green { color: var(--txt); }
+        .log-red { color: var(--red); }
+        .log-cyan { color: var(--cyan); }
+        .log-yellow { color: var(--yellow); }
+    </style>
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+
+    <div class="container">
+        <div class="header">
+            <div class="ascii-art">[ JMS://BUSCAMINAS ]</div>
+            <div class="name">MINE_SWEEPER</div>
+        </div>
+
+        <div id="game-container">
+            <div id="difficulty">
+                <button class="active" onclick="setDifficulty(8,10)">FACIL (8x8)</button>
+                <button onclick="setDifficulty(12,25)">MEDIO (12x12)</button>
+                <button onclick="setDifficulty(16,50)">DIFICIL (16x16)</button>
+            </div>
+
+            <div id="game-header">
+                <div>MINAS: <span id="mines">10</span></div>
+                <div>FLAGS: <span id="flags">0</span></div>
+                <div>TIEMPO: <span id="timer">0</span>s</div>
+                <div>CELDA: <span id="cell-count">0</span>/<span id="total-cells">54</span></div>
+            </div>
+
+            <div id="board"></div>
+
+            <div id="message"></div>
+
+            <div style="margin-top:10px;">
+                <button onclick="restartGame()" style="background:none;border:2px solid var(--txt);color:var(--txt);padding:8px 25px;font-family:var(--fnt);font-size:13px;cursor:pointer;text-transform:uppercase;">
+                    REINICIAR
+                </button>
+            </div>
+
+            <div id="terminal-output">
+                <p class="log-cyan">> Initializing mine_sweep.exe...</p>
+                <p class="log-green">> Click to reveal. Right-click to flag.</p>
+                <p class="log-yellow">> Find all safe cells to win.</p>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin:20px 0;">
+            <a href="index.html" class="secret-btn" style="border-color:#00ff41;color:#00ff41;">
+                [ ← VOLVER AL CV ]
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>┌─────────────────────────────────────────────┐</p>
+            <p>│  BUILD: 2026.09.02 &nbsp;&nbsp;│&nbsp;&nbsp; STATUS: OPERATIONAL &nbsp;&nbsp;│&nbsp;&nbsp; CLASS: CONFIDENTIAL  │</p>
+            <p>└─────────────────────────────────────────────┘</p>
+            <p style="margin-top:8px">JMS_TERMINAL v1.0 — <span class="cursor">█</span></p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/minesweeper.js"></script>
+</body>
+</html>
 
