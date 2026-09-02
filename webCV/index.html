@@ -1,1 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMS_TERMINAL</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- MATRIX RAIN CANVAS -->
+    <canvas id="matrix"></canvas>
+
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen"></div>
+
+    <div class="container">
+
+        <!-- ====== HEADER ====== -->
+        <div class="header">
+            <div class="ascii-art">[ JMS://SEC ]</div>
+
+            <div class="name" id="name-text"></div>
+
+            <div class="contact-grid">
+                <div class="item"><span class="label">LOCATION:</span> Lima, Perú</div>
+                <div class="item"><span class="label">PHONE:</span> +51 904 592 796</div>
+                <div class="item"><span class="label">EMAIL:</span> <a href="mailto:juan.mendoza.security0@gmail.com">juan.mendoza.security0@gmail.com</a></div>
+                <div class="item"><span class="label">LINKEDIN:</span> <a href="https://www.linkedin.com/in/juanf-mendoza" target="_blank">juanf-mendoza</a></div>
+                <div class="item"><span class="label">GITHUB:</span> <a href="https://github.com/JuanMendozaSec" target="_blank">JuanMendozaSec</a></div>
+                <div class="item"><span class="label">STATUS:</span> <span style="color:#00ff41">● Disponible</span></div>
+            </div>
+        </div>
+
+        <!-- ====== PERFIL ====== -->
+        <div class="section">
+            <div class="section-title">PERFIL</div>
+            <p>Investigador de seguridad ofensiva y cazador de bug bounty en formación, con experiencia práctica en pruebas de penetración web, ingeniería inversa de binarios (PE/ELF) y explotación en entornos CTF.</p>
+            <p>Enfoque en reconocimiento y análisis de APIs GraphQL, automatización de flujos de seguridad con tooling asistido por IA, y desarrollo de habilidades técnicas mediante plataformas estructuradas.</p>
+            <p>Cursando formación técnica formal en Ciberseguridad. Busco una posición de nivel inicial en Seguridad Ofensiva / Pentesting / Bug Bounty.</p>
+        </div>
+
+        <!-- ====== HABILIDADES ====== -->
+        <div class="section">
+            <div class="section-title">HABILIDADES</div>
+
+            <div class="skill-bar-container">
+                <div class="skill-item">
+                    <div class="skill-label"><span>Web Pentest</span><span>85%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label"><span>GraphQL / APIs</span><span>75%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="75"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label"><span>Ingeniería Inversa</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="70"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label"><span>Bug Bounty</span><span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="80"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label"><span>Scripting (Python/Bash)</span><span>75%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="75"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label"><span>Redes & OSINT</span><span>65%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="65"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label"><span>CTF / PWN</span><span>60%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="60"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label"><span>IA-Tooling / MCP</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-level="70"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== TOOLS ====== -->
+        <div class="section">
+            <div class="section-title">TOOLS & TECH</div>
+            <div class="tags">
+                <span class="tag">Burp Suite</span>
+                <span class="tag">Nuclei</span>
+                <span class="tag">ffuf</span>
+                <span class="tag">Ghidra</span>
+                <span class="tag">Cutter</span>
+                <span class="tag">GDB+GEF</span>
+                <span class="tag">x64dbg</span>
+                <span class="tag">Grafana</span>
+                <span class="tag">OWASP</span>
+                <span class="tag">GraphQL</span>
+                <span class="tag">Python</span>
+                <span class="tag">Bash</span>
+                <span class="tag">OpenCode</span>
+                <span class="tag">MCP</span>
+                <span class="tag">Kali Linux</span>
+                <span class="tag">WireShark</span>
+                <span class="tag">Metasploit</span>
+                <span class="tag">SQLMap</span>
+                <span class="tag">Hydra</span>
+                <span class="tag">Nmap</span>
+            </div>
+        </div>
+
+        <!-- ====== EXPERIENCIA ====== -->
+        <div class="section">
+            <div class="section-title">EXPERIENCIA</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 — ACTUALIDAD</div>
+                    <div class="timeline-title">Investigador Independiente — Bug Bounty</div>
+                    <div class="timeline-desc">
+                        Investigación sobre Render.com: dashboard/API GraphQL, token de sesión, claves de Segment embebidas, exposición de IDs internos. Diseño de entorno agéntico local (OpenCode + MCP) para acelerar reconocimiento y fuzzing automatizado.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 — ACTUALIDAD</div>
+                    <div class="timeline-title">Práctica de Ingeniería Inversa</div>
+                    <div class="timeline-desc">
+                        Retos en crackmes.one y HackTheBox — análisis de binarios PE/ELF, anti-debugging, explotación en entornos RISC-V, creación de keygens en Python y scripts de cracking.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 — ACTUALIDAD</div>
+                    <div class="timeline-title">Competidor CTF</div>
+                    <div class="timeline-desc">
+                        Participación en Dragon-Sphere CTF (pasantía en escaneo de puertos, fuzzing de subdominios, auditoría de código JSON/API), CTF hackandsec, HTB CyberApocalypse (cripto + reversing) y picoCTF.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== EDUCACION ====== -->
+        <div class="section">
+            <div class="section-title">EDUCACIÓN</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">AGO. 2026 — EN CURSO</div>
+                    <div class="timeline-title">Instituto SISE — Lima, Perú</div>
+                    <div class="timeline-desc">Carrera Técnica en Ciberseguridad. Formación técnica estructurada en seguridad ofensiva y defensiva, redes, sistemas operativos y análisis de vulnerabilidades.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== CERTIFICACIONES ====== -->
+        <div class="section">
+            <div class="section-title">CERTIFICACIONES & FORMACIÓN</div>
+            <div class="tags">
+                <span class="tag" style="border-color:#ffff00;color:#ffff00">eJPT (en curso)</span>
+                <span class="tag" style="border-color:#ff3333;color:#ff3333">pwn.college (explotación web)</span>
+                <span class="tag" style="border-color:#00ffff;color:#00ffff">OST Arch1001 (x86-64 & RE)</span>
+                <span class="tag" style="border-color:#ff00ff;color:#ff00ff">Ringzer0 CTF (en curso)</span>
+            </div>
+        </div>
+
+        <!-- ====== IDIOMAS ====== -->
+        <div class="section">
+            <div class="section-title">IDIOMAS</div>
+            <div class="lang-bars">
+                <div class="lang-item">
+                    <div class="lang-circle">ES</div>
+                    <span>Nativo</span>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-circle">EN</div>
+                    <span>Básico-Intermedio</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== CLICK HERE BUTTON ====== -->
+        <div class="section" style="text-align:center; border:none; padding:20px 0;">
+            <a href="buscaminas.html" class="secret-btn">
+                [ CLICK HERE // BUSCAMINAS ]
+            </a>
+        </div>
+
+        <!-- ====== FOOTER ====== -->
+        <div class="footer">
+            <p>┌─────────────────────────────────────────────┐</p>
+            <p>│  BUILD: 2026.09.02 &nbsp;&nbsp;│&nbsp;&nbsp; STATUS: OPERATIONAL &nbsp;&nbsp;│&nbsp;&nbsp; CLASS: CONFIDENTIAL  │</p>
+            <p>└─────────────────────────────────────────────┘</p>
+            <p style="margin-top:8px">JMS_TERMINAL v1.0 — <span class="cursor">█</span></p>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Type name after boot
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const nameEl = document.getElementById('name-text');
+                if (nameEl) typeWriter(nameEl, 'JUAN MENDOZA', 80);
+            }, 5500);
+        });
+    </script>
+</body>
+</html>
 
